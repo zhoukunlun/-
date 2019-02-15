@@ -32,8 +32,8 @@ export default {
   data () {
     return {
       loginForm: {
-        username: '',
-        password: ''
+        username: 'admin',
+        password: '123456'
       },
       loginFormRules: {
         username: [
@@ -51,7 +51,7 @@ export default {
           if (res.meta.status !== 200) {
             return this.$message.error('用户名或密码不存在')
           }
-          window.sessionStorage.setItem('login', res.data.token)
+          window.sessionStorage.setItem('token', res.data.token)
           this.$router.push('/home')
         }
       })
