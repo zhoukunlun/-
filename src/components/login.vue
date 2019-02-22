@@ -29,7 +29,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       loginForm: {
         username: 'admin',
@@ -44,7 +44,7 @@ export default {
     }
   },
   methods: {
-    login () {
+    login() {
       this.$refs.loginFormRef.validate(async valid => {
         if (valid === true) {
           const { data: res } = await this.$http.post('login', this.loginForm)
@@ -56,7 +56,7 @@ export default {
         }
       })
     },
-    resetForm () {
+    resetForm() {
       this.$refs.loginFormRef.resetFields()
     }
   }
